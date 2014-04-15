@@ -43,6 +43,10 @@ import org.newdawn.slick.util.ResourceLoader;
 import com.yobibyte.solving.core.Constants;
 
 public class Body {
+	
+	public static int OFFSET_X = Constants.TILE_SIZE/2;
+	public static int OFFSET_Y = Constants.TILE_SIZE/2;
+	
 	public double mass;
 	public Point2D coord;
 	public Point2D velocity;
@@ -50,15 +54,7 @@ public class Body {
 	Point2D[] velCoefs;
 	Point2D[] posCoefs;
 
-	// public Body() {
-	// mass = Constants.MASS;
-	// coord = Constants.INITIAL_COORD;
-	// velocity = Constants.INITIAL_VELOCITY;
-	// acceleration = Constants.INITIAL_ACCELERATION;
-	// // Runge-Kutta of a 4th order
-	// velCoefs = new Point2D[4];
-	// posCoefs = new Point2D[4];
-	// }
+
 	//
 
 	private final int NUM_OF_VERTICES = 6;
@@ -74,12 +70,14 @@ public class Body {
 	public float x;
 	public float y;
 
+	
+	
 	public void setRenderCoords() {
 //		Random r = new Random();
 //		x = r.nextInt(100);
 //		y = r.nextInt(100);
-		x = (float) coord.getX() + 100;
-		y = (float) coord.getY() + 100;
+		x = (float) coord.getX() + OFFSET_X;
+		y = (float) coord.getY() + OFFSET_Y;
 		//x = (int) (coord.getX()*30) + 300;
 		 //y = (int) (coord.getY()*30) + 100;
 	}
