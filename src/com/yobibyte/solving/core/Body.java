@@ -201,13 +201,8 @@ public class Body {
 	public static int OFFSET_Y = Constants.TILE_SIZE / 2;
 
 	public double mass;
-//	public Point2D coord;
-//	public Point2D velocity;
-//	public Point2D acceleration;
-
-	public double _velocity;
-	public double alpha;
-	public double radius;
+	public Point2D coord;
+	public Point2D velocity;
 
 	private final int NUM_OF_VERTICES = 6;
 	private final int DIMENSION = 3; // 2 actually, but it's easier in that way
@@ -223,16 +218,15 @@ public class Body {
 	public float y;
 
 	public void setRenderCoords() {
-		x = (float) (Math.cos(alpha)*radius) + OFFSET_X;
-		y = (float) (Math.sin(alpha)*radius) + OFFSET_Y;
+		x = (float) coord.getX() + OFFSET_X + 200;
+		y = (float) coord.getY() + OFFSET_Y + 200;
 	}
 
-	public Body(double vel, double alpha, double radius) {
+	public Body(Point2D coords, Point2D vel) {
 		mass = Constants.MASS;
-		
-		this.alpha = Math.toRadians(alpha);
-		_velocity = vel;
-		this.radius = radius;
+		coord = coords;
+		velocity = vel;
+		//velocity = vel;
 		
 		setRenderCoords();
 		
