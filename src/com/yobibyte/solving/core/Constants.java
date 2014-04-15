@@ -15,7 +15,7 @@ public class Constants {
 	public static final double CONSTANT_OF_FRICTION = 0.8f;
 	public static final double ALPHA = 40;
 	public static final double MASS = 1;
-	public static final double RUNGE_STEP = 0.01f;
+	public static final Double RUNGE_STEP = 0.01d;
 
 	public static final double SIN_ALPHA = Math.sin(Math.toRadians(ALPHA));
 	public static final double COS_ALPHA = Math.cos(Math.toRadians(ALPHA));

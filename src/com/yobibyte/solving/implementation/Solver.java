@@ -34,7 +34,7 @@ public class Solver {
 				Body currBody = it.next();
 				
 				//solve
-				solver.solve(currBody);
+				solver.solve(currBody, bodies);
 				
 				//print coords
 				Point2D currCoord = currBody.coord;
