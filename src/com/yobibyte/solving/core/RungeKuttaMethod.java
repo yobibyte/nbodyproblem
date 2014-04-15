@@ -39,7 +39,6 @@ public class RungeKuttaMethod implements DiffEquSolver {
 		k2v.setLocation(getAccel(bodies, body, varToCalc));
 		k2p.setLocation(velocity.getX() * k1v.getX() * STEP / 2, velocity.getY() * k1v.getY() * STEP / 2);
 
-		
 		varToCalc.setLocation(coords.getX() + k2p.getX() * STEP / 2, coords.getY() + k2p.getY() * STEP / 2);
 		k3v.setLocation(getAccel(bodies, body, varToCalc));
 		k3p.setLocation(velocity.getX() * k2v.getX() * STEP / 2, velocity.getY() * k2v.getY() * STEP / 2);
@@ -54,24 +53,18 @@ public class RungeKuttaMethod implements DiffEquSolver {
 
 	public Point2D getAccel(List<Body> bodies, Body currBody, Point2D varToCalc) {
 
-		// TODO may be a bug due to references and so on
-		List<Body> bodiesToCalc = new ArrayList<Body>();
 		Iterator<Body> it = bodies.iterator();
 
-		while (it.hasNext()) {
-			Body body = it.next();
-			if (body != currBody) {
-				bodiesToCalc.add(body);
-			}
-		}
-		it = bodiesToCalc.iterator();
 		double accelX = 0d;
 		double accelY = 0d;
 
 		while (it.hasNext()) {
 			Body body = it.next();
-			accelX += body.mass * (body.coord.getX() - varToCalc.getX()) / Math.pow(Math.abs(body.coord.getX() - varToCalc.getX()), 3);
-			accelY += body.mass * (body.coord.getY() - varToCalc.getY()) / Math.pow(Math.abs(body.coord.getY() - varToCalc.getY()), 3);
+			if (body != currBody) {
+				accelX += body.mass * (body.coord.getX() - varToCalc.getX()) / Math.pow(Math.abs(body.coord.getX() - varToCalc.getX()), 3);
+				accelY += body.mass * (body.coord.getY() - varToCalc.getY()) / Math.pow(Math.abs(body.coord.getY() - varToCalc.getY()), 3);
+			}
+
 		}
 		accelX *= Constants.GRAVITY;
 		accelY *= Constants.GRAVITY;
