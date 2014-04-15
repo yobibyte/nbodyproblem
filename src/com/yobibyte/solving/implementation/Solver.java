@@ -30,8 +30,14 @@ public class Solver {
 			Iterator<Body> it = bodies.iterator();
 			int ctr = 0;
 			while (it.hasNext()) {
+				
+				Body currBody = it.next();
+				
+				//solve
+				solver.solve(currBody);
+				
 				//print coords
-				Point2D currCoord = it.next().coord;
+				Point2D currCoord = currBody.coord;
 				System.out.println("* " + (ctr+1) + " BODY:  X = " + currCoord.getX() + " ; Y = " + currCoord.getY() + " ;");
 				ctr++;
 			}

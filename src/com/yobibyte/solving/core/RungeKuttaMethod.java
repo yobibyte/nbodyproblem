@@ -17,15 +17,6 @@ public class RungeKuttaMethod implements DiffEquSolver {
 		body.coord.setLocation(body.coord.getX() + (posCoefs[0].getX()+2*posCoefs[1].getX()+2*posCoefs[2].getX()+posCoefs[3].getX())*STEP/6, body.coord.getY() + (posCoefs[0].getY()+(2*posCoefs[1].getY()+2*posCoefs[2].getY()+posCoefs[3].getY())*STEP/6));
 	}
 
-	private Point2D getNextVelocity(Point2D currVelocity) {
-		Point2D nextVelocity = new Point2D.Double();
-		return nextVelocity;
-	}
-
-	private Point2D getNextCoord(Point2D currCoord) {
-		Point2D nextCoord = new Point2D.Double();
-		return nextCoord;
-	}
 
 	private void calcCoeff(Body body) {
 		Point2D accel = body.acceleration;
