@@ -4,7 +4,7 @@ import java.awt.geom.Point2D;
 
 public class Constants {
 
-	public static Integer NUM_OF_STEPS = 10;
+	public static Integer NUM_OF_STEPS = 1000000;
 	
 	public static final Point2D INITIAL_COORD = new Point2D.Double();
 	public static final Point2D INITIAL_VELOCITY = new Point2D.Double(2,2);
@@ -29,8 +29,10 @@ public class Constants {
 	//Rendering stuff
 	public static String TITLE = "Yobibyte n-problem implementation";
 	
-	public static final Integer DISPLAY_WIDTH = 700;
-	public static final Integer DISPLAY_HEIGHT = 500;
+	public static final int TILE_SIZE = 32;
+	
+	public static final Integer DISPLAY_WIDTH = 1024;
+	public static final Integer DISPLAY_HEIGHT = 768;
 	
 	public static final Integer FPS = 60;
 	public static final boolean isFullScreen = true;

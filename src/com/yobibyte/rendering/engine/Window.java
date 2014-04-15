@@ -21,16 +21,19 @@ public class Window {
 		}
 	}
 
-	//TODO read about this methods of GL
-	private static void initGl() {
-		glClearColor(0.5f, 0.5f, 1, 1);
-		glMatrixMode(GL_PROJECTION);
-		glLoadIdentity(); 
-		//Set 2D mode
-		glOrtho(0, Display.getWidth(), 0, Display.getHeight(), -1, 1);
-		glMatrixMode(GL_MODELVIEW);
-		glLoadIdentity();
-	}
+	 // TODO read about this methods of GL
+	 private static void initGl() {
+	 glClearColor(0.5f, 0.5f, 1, 1);
+	 glMatrixMode(GL_PROJECTION);
+	 glLoadIdentity();
+	 // Set 2D mode
+	 glOrtho(0, Display.getWidth(), 0, Display.getHeight(), -1, 1);
+	 glMatrixMode(GL_MODELVIEW);
+	 glEnable(GL_TEXTURE_2D);
+	 glEnable(GL_BLEND);
+	 glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
+	 glLoadIdentity();
+	 }
 
 	public static void clear() {
 		glClear(GL_COLOR_BUFFER_BIT);
@@ -41,4 +44,8 @@ public class Window {
 		Display.sync(Constants.FPS);
 	}
 
+	public static void destroy() {
+		Display.destroy();
+		System.exit(0);
+	}
 }

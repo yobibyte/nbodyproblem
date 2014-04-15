@@ -14,35 +14,46 @@ import com.yobibyte.solving.core.RungeKuttaMethod;
 public class Solver {
 
 	List<Body> bodies = new ArrayList<Body>(Constants.NUM_OF_BODIES);
+	Integer stepsNum = Constants.NUM_OF_STEPS;
+	DiffEquSolver solver = new RungeKuttaMethod();;
 
-	public void solve() {
-		DiffEquSolver solver = new RungeKuttaMethod();
-		Integer stepsNum = Constants.NUM_OF_STEPS;
+	
+	public Solver(List<Body> bodies) {
+		this.bodies = bodies;
+	}
 
-		Random rand = new Random();
-		for (int i = 0; i < Constants.NUM_OF_BODIES; i++) {
-			bodies.add(new Body(rand.nextDouble(), rand.nextDouble()));
-		}
+	public void solve(int stepNum) {
+		
 
-		for (int i = 0; i < stepsNum; i++) {
-			System.out.println("STEP " + (i+1) + " ----------------------");
-			// Point2D currPt = solver.solve();
-			Iterator<Body> it = bodies.iterator();
-			int ctr = 0;
-			while (it.hasNext()) {
-				
-				Body currBody = it.next();
-				
-				//solve
-				solver.solve(currBody, bodies);
-				
-				//print coords
-				Point2D currCoord = currBody.coord;
-				System.out.println("* " + (ctr+1) + " BODY:  X = " + currCoord.getX() + " ; Y = " + currCoord.getY() + " ;");
-				ctr++;
-			}
+//		Random rand = new Random();
+//		for (int i = 0; i < Constants.NUM_OF_BODIES; i++) {
+//			bodies.add(new Body(rand.nextDouble(), rand.nextDouble()));
+//		}
 
-			System.out.println("---------------------------------");
+	//	for (int i = 0; i < stepsNum; i++) {
+			makeAStep(stepNum);
+	//	}
+
+		System.out.println("---------------------------------");
+	}
+
+	public void makeAStep(int stepNum) {
+		System.out.println("STEP " + (stepNum + 1) + " ----------------------");
+		// Point2D currPt = solver.solve();
+		Iterator<Body> it = bodies.iterator();
+		int ctr = 0;
+		while (it.hasNext()) {
+
+			Body currBody = it.next();
+
+			// solve
+			solver.solve(currBody, bodies);
+
+			// print coords
+			Point2D currCoord = currBody.coord;
+			//System.out.println("* " + (ctr + 1) + " BODY:  X = " + currCoord.getX() + " ; Y = " + currCoord.getY() + " ;");
+			System.out.println("* " + (ctr + 1) + " BODY:  X = " + currBody.x + " ; Y = " + currBody.y + " ;");
+			ctr++;
 		}
 	}
 
