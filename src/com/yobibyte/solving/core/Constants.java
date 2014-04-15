@@ -7,6 +7,8 @@ public class Constants {
 	public static Integer NUM_OF_STEPS = 10;
 	
 	public static final Point2D INITIAL_COORD = new Point2D.Double();
+	public static final Point2D INITIAL_VELOCITY = new Point2D.Double();
+	public static final Point2D INITIAL_ACCELERATION = new Point2D.Double();
 	public static final double V0 = 1f;
 	public static final double GRAVITY = 9.81f;
 
@@ -20,6 +22,6 @@ public class Constants {
 	public static final double VX0 = V0 * COS_ALPHA;
 	public static final double VY0 = V0 * SIN_ALPHA;
 	
-	public static Integer NUM_OF_BODIES = 2;
+	public static Integer NUM_OF_BODIES = 10;
 
 }
