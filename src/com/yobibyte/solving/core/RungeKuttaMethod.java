@@ -60,12 +60,10 @@ public class RungeKuttaMethod implements DiffEquSolver {
 
 		while (it.hasNext()) {
 			Body body = it.next();
-			// TODO may be a bug due to != of objects
 			if (body != currBody) {
 				bodiesToCalc.add(body);
 			}
 		}
-
 		it = bodiesToCalc.iterator();
 		double accelX = 0d;
 		double accelY = 0d;
