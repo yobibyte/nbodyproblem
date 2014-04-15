@@ -24,4 +24,14 @@ public class Constants {
 	
 	public static Integer NUM_OF_BODIES = 10;
 
+	
+	
+	//Rendering stuff
+	public static String TITLE = "Yobibyte n-problem implementation";
+	
+	public static final Integer DISPLAY_WIDTH = 700;
+	public static final Integer DISPLAY_HEIGHT = 500;
+	
+	public static final Integer FPS = 60;
+	public static final boolean isFullScreen = true;
 }
