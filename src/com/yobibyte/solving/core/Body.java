@@ -30,32 +30,19 @@ import org.newdawn.slick.util.ResourceLoader;
 import static org.lwjgl.opengl.GL11.*;
 import static org.lwjgl.opengl.GL15.*;
 
-import java.awt.geom.Point2D;
-import java.io.IOException;
-import java.nio.FloatBuffer;
-import java.util.Random;
-
-import org.lwjgl.BufferUtils;
-import org.newdawn.slick.opengl.Texture;
-import org.newdawn.slick.opengl.TextureLoader;
-import org.newdawn.slick.util.ResourceLoader;
-
 import com.yobibyte.solving.core.Constants;
 
 public class Body {
-	
-	public static int OFFSET_X = Constants.TILE_SIZE/2;
-	public static int OFFSET_Y = Constants.TILE_SIZE/2;
-	
+
+	public static int OFFSET_X = Constants.TILE_SIZE / 2;
+	public static int OFFSET_Y = Constants.TILE_SIZE / 2;
+
 	public double mass;
 	public Point2D coord;
 	public Point2D velocity;
 	public Point2D acceleration;
 	Point2D[] velCoefs;
 	Point2D[] posCoefs;
-
-
-	//
 
 	private final int NUM_OF_VERTICES = 6;
 	private final int DIMENSION = 3; // 2 actually, but it's easier in that way
@@ -70,16 +57,9 @@ public class Body {
 	public float x;
 	public float y;
 
-	
-	
 	public void setRenderCoords() {
-//		Random r = new Random();
-//		x = r.nextInt(100);
-//		y = r.nextInt(100);
 		x = (float) coord.getX() + OFFSET_X;
 		y = (float) coord.getY() + OFFSET_Y;
-		//x = (int) (coord.getX()*30) + 300;
-		 //y = (int) (coord.getY()*30) + 100;
 	}
 
 	// private int x = 0;
@@ -104,10 +84,6 @@ public class Body {
 		// TODO simplify this
 		// Two triangles here because of 2D
 		vertexData.put(new float[] { x, y, 0, x + Constants.TILE_SIZE, y, 0, x, y + Constants.TILE_SIZE, 0, x + Constants.TILE_SIZE, y + Constants.TILE_SIZE, 0, x, y + Constants.TILE_SIZE, 0, x + Constants.TILE_SIZE, y, 0 });
-		// vertexData.put(new float[] { x, y, 0 + x + Constants.TILE_SIZE, y, 0, x,
-		// y + Constants.TILE_SIZE, 0, x + Constants.TILE_SIZE, y +
-		// Constants.TILE_SIZE, 0, x, y + Constants.TILE_SIZE, 0, x +
-		// Constants.TILE_SIZE, y, 0 });
 		vertexData.flip();
 
 		FloatBuffer textureCoordData = BufferUtils.createFloatBuffer(NUM_OF_VERTICES * TEX_COORDS);
@@ -125,28 +101,6 @@ public class Body {
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 
 	}
-
-	// public void render() {
-	// glBindTexture(GL_TEXTURE_2D, texture.getTextureID());
-	//
-	// glBindBuffer(GL_ARRAY_BUFFER, vboVertexHandle);
-	// glVertexPointer(DIMENSION, GL_FLOAT, 0, 0L);
-	//
-	// glBindBuffer(GL_ARRAY_BUFFER, vboTexCoordHandle);
-	// glTexCoordPointer(TEX_COORDS, GL_FLOAT, 0, 0L);
-	//
-	// glEnableClientState(GL_VERTEX_ARRAY);
-	// glEnableClientState(GL_TEXTURE_COORD_ARRAY);
-	//
-	// glPushMatrix();
-	// glTranslatef(x, y, 0);
-	// glPopMatrix();
-	//
-	// glDrawArrays(GL_TRIANGLES, 0, NUM_OF_VERTICES);
-	// glDisableClientState(GL_VERTEX_ARRAY);
-	// glDisableClientState(GL_TEXTURE_COORD_ARRAY);
-	//
-	// }
 
 	public void render() {
 		glBindTexture(GL_TEXTURE_2D, texture.getTextureID());
