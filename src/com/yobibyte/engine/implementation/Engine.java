@@ -1,7 +1,6 @@
 package com.yobibyte.engine.implementation;
 
 import org.lwjgl.opengl.Display;
-import org.newdawn.slick.openal.SoundStore;
 
 import com.yobibyte.nbody.NBodyProblemModel;
 import com.yobibyte.rendering.engine.Window;

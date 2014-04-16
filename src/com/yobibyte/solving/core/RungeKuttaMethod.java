@@ -1,7 +1,6 @@
 package com.yobibyte.solving.core;
 
 import java.awt.geom.Point2D;
-import java.awt.geom.Point2D.Double;
 import java.util.Iterator;
 import java.util.List;
 

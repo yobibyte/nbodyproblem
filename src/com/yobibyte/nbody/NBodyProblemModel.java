@@ -1,10 +1,8 @@
 package com.yobibyte.nbody;
 
-import java.awt.Point;
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 import com.yobibyte.solving.core.Background;
 import com.yobibyte.solving.core.Body;
@@ -21,7 +19,7 @@ public class NBodyProblemModel {
 		// player = new Player();
 		bg = new Background(0f, 0f);
 		bg1 = new Background(0, -400);
-		Random rand = new Random();
+//		Random rand = new Random();
 //		for (int i = 0; i < Constants.NUM_OF_BODIES; i++) {
 //			Body newBody = new Body(new Point2D.Double(rand.nextDouble() * 100, rand.nextDouble() * 100), new Point2D.Double(rand.nextDouble() / 10, rand.nextDouble() / 10));
 //			newBody.mass = rand.nextFloat() * 10000;

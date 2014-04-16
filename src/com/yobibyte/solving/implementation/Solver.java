@@ -1,10 +1,8 @@
 package com.yobibyte.solving.implementation;
 
-import java.awt.geom.Point2D;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Random;
 
 import com.yobibyte.solving.core.Body;
 import com.yobibyte.solving.core.Constants;
