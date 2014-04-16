@@ -22,17 +22,15 @@ public class NBodyProblemModel {
 		bg1 = new Background(0, -400);
 		Random rand = new Random();
 //		for (int i = 0; i < Constants.NUM_OF_BODIES; i++) {
-//			Body newBody = new Body(new Point2D.Double(rand.nextDouble() * 150, rand.nextDouble() * 150), new Point2D.Double(rand.nextDouble() / 5, rand.nextDouble() / 5));
-//			newBody.mass = rand.nextFloat() * 10000;
+//			Body newBody = new Body(new Point2D.Double(rand.nextDouble() * 500, rand.nextDouble() * 500), new Point2D.Double(rand.nextDouble() / 3, rand.nextDouble() / 3), rand.nextDouble() * 500);
 //			bodies.add(newBody);
 //		}
 
 		 Body earth = new Body(new Point2D.Double(-10, 0), new Point2D.Double(0,
-		 -0.1));
+		 -0.1),500d);
 		 Body moon = new Body(new Point2D.Double(10, 0), new Point2D.Double(0,
-		 0.1));
-		 earth.mass = 500d;
-		 moon.mass = 500d;
+		 0.1),500d);
+		 
 		 bodies.add(earth);
 		 bodies.add(moon);
 		

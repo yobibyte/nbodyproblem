@@ -42,7 +42,7 @@ public class RungeKuttaMethod implements DiffEquSolver {
 //		 double fx = 0d;
 //		 double fy = 0d;
 //		
-//		 if (it.hasNext()) {
+//		 while (it.hasNext()) {
 //		 Body currBody = it.next();
 //		 if (currBody != body) {
 //		 double deltaX = currBody.coord.getX() - coords.getX();

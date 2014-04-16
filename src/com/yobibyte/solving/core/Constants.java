@@ -11,7 +11,7 @@ public class Constants {
 	//public static final double GRAVITY = 6.67545 / Math.pow(10, 11);
 	public static final double GRAVITY = 0.0001d;
 	public static final double MASS = 200d;
-	public static final Double RUNGE_STEP = 2d;
+	public static final Double RUNGE_STEP = 10d;
 	public static Integer NUM_OF_BODIES = 2;
 	public static Integer NUM_OF_STEPS = 1000000;
 

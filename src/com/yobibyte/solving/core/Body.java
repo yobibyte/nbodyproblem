@@ -33,8 +33,8 @@
 //
 //public class Body {
 //
-//	public static int OFFSET_X = Constants.TILE_SIZE / 2;
-//	public static int OFFSET_Y = Constants.TILE_SIZE / 2;
+//	public static int OFFSET_X = TILE_SIZE / 2;
+//	public static int OFFSET_Y = TILE_SIZE / 2;
 //
 //	public double mass;
 //	public Point2D coord;
@@ -80,7 +80,7 @@
 //		FloatBuffer vertexData = BufferUtils.createFloatBuffer(NUM_OF_VERTICES * DIMENSION);
 //		// TODO simplify this
 //		// Two triangles here because of 2D
-//		vertexData.put(new float[] { x, y, 0, x + Constants.TILE_SIZE, y, 0, x, y + Constants.TILE_SIZE, 0, x + Constants.TILE_SIZE, y + Constants.TILE_SIZE, 0, x, y + Constants.TILE_SIZE, 0, x + Constants.TILE_SIZE, y, 0 });
+//		vertexData.put(new float[] { x, y, 0, x + TILE_SIZE, y, 0, x, y + TILE_SIZE, 0, x + TILE_SIZE, y + TILE_SIZE, 0, x, y + TILE_SIZE, 0, x + TILE_SIZE, y, 0 });
 //		vertexData.flip();
 //
 //		FloatBuffer textureCoordData = BufferUtils.createFloatBuffer(NUM_OF_VERTICES * TEX_COORDS);
@@ -118,7 +118,7 @@
 //		FloatBuffer vertexData = BufferUtils.createFloatBuffer(NUM_OF_VERTICES * DIMENSION);
 //		// TODO simplify this
 //		// Two triangles here because of 2D
-//		vertexData.put(new float[] { x, y, 0, x + Constants.TILE_SIZE, y, 0, x, y + Constants.TILE_SIZE, 0, x + Constants.TILE_SIZE, y + Constants.TILE_SIZE, 0, x, y + Constants.TILE_SIZE, 0, x + Constants.TILE_SIZE, y, 0 });
+//		vertexData.put(new float[] { x, y, 0, x + TILE_SIZE, y, 0, x, y + TILE_SIZE, 0, x + TILE_SIZE, y + TILE_SIZE, 0, x, y + TILE_SIZE, 0, x + TILE_SIZE, y, 0 });
 //		vertexData.flip();
 //
 //		FloatBuffer textureCoordData = BufferUtils.createFloatBuffer(NUM_OF_VERTICES * TEX_COORDS);
@@ -197,8 +197,10 @@ import org.newdawn.slick.util.ResourceLoader;
 
 public class Body {
 
-	public static int OFFSET_X = Constants.TILE_SIZE / 2;
-	public static int OFFSET_Y = Constants.TILE_SIZE / 2;
+	public static int TILE_SIZE = Constants.TILE_SIZE;
+
+	public int OFFSET_X = TILE_SIZE / 2;
+	public int OFFSET_Y = TILE_SIZE / 2;
 
 	public double mass;
 	public Point2D coord;
@@ -217,18 +219,25 @@ public class Body {
 	public float x;
 	public float y;
 
-	public void setRenderCoords() {
-		x = (float) coord.getX() + OFFSET_X + 200;
-		y = (float) coord.getY() + OFFSET_Y + 200;
-	};
+	 public void setRenderCoords() {
+	 x = (float) coord.getX() + OFFSET_X + 200;
+	 y = (float) coord.getY() + OFFSET_Y + 200;
+	 };
 
-	public Body(Point2D coords, Point2D vel) {
-		mass = Constants.MASS;
+//	public void setRenderCoords() {
+//		x = (float) coord.getX() + OFFSET_X;
+//		y = (float) coord.getY() + OFFSET_Y;
+//	};
+
+	public Body(Point2D coords, Point2D vel, double mass) {
+		this.mass = mass;
 		coord = coords;
 		velocity = vel;
-		
+
+	//	TILE_SIZE = (int) (Constants.TILE_SIZE * mass / Constants.MASS);
+
 		setRenderCoords();
-		
+
 		// Runge-Kutta of a 4th order
 
 		try {
@@ -240,7 +249,7 @@ public class Body {
 		FloatBuffer vertexData = BufferUtils.createFloatBuffer(NUM_OF_VERTICES * DIMENSION);
 		// TODO simplify this
 		// Two triangles here because of 2D
-		vertexData.put(new float[] { x, y, 0, x + Constants.TILE_SIZE, y, 0, x, y + Constants.TILE_SIZE, 0, x + Constants.TILE_SIZE, y + Constants.TILE_SIZE, 0, x, y + Constants.TILE_SIZE, 0, x + Constants.TILE_SIZE, y, 0 });
+		vertexData.put(new float[] { x, y, 0, x + TILE_SIZE, y, 0, x, y + TILE_SIZE, 0, x + TILE_SIZE, y + TILE_SIZE, 0, x, y + TILE_SIZE, 0, x + TILE_SIZE, y, 0 });
 		vertexData.flip();
 
 		FloatBuffer textureCoordData = BufferUtils.createFloatBuffer(NUM_OF_VERTICES * TEX_COORDS);
