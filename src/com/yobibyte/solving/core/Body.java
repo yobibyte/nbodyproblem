@@ -219,15 +219,15 @@ public class Body {
 	public float x;
 	public float y;
 
-	 public void setRenderCoords() {
-	 x = (float) coord.getX() + OFFSET_X + 200;
-	 y = (float) coord.getY() + OFFSET_Y + 200;
-	 };
+//	 public void setRenderCoords() {
+//	 x = (float) coord.getX() + OFFSET_X + 200;
+//	 y = (float) coord.getY() + OFFSET_Y + 200;
+//	 };
 
-//	public void setRenderCoords() {
-//		x = (float) coord.getX() + OFFSET_X;
-//		y = (float) coord.getY() + OFFSET_Y;
-//	};
+	public void setRenderCoords() {
+		x = (float) coord.getX() + OFFSET_X;
+		y = (float) coord.getY() + OFFSET_Y;
+	};
 
 	public Body(Point2D coords, Point2D vel, double mass) {
 		this.mass = mass;

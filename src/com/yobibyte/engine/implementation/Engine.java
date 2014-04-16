@@ -25,6 +25,7 @@ public class Engine {
 				nBodyProblemModel.calculations(stepCounter);
 				stepCounter++;
 			}
+			//nBodyProblemModel.calcCollisions();
 			nBodyProblemModel.render();
 			Window.update();
 		}
