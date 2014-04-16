@@ -23,7 +23,7 @@ public class Solver {
 	}
 
 	public void makeAStep(int stepNum) {
-		System.out.println("STEP " + (stepNum + 1) + " ----------------------");
+	//	System.out.println("STEP " + (stepNum + 1) + " ----------------------");
 		Iterator<Body> it = bodies.iterator();
 		int ctr = 0;
 		while (it.hasNext()) {
@@ -31,7 +31,7 @@ public class Solver {
 			solver.solve(currBody, bodies);
 //			Point2D currCoord = currBody.coord;
 			//System.out.println("* " + (ctr + 1) + " BODY:  X = " + currCoord.getX() + " ; Y = " + currCoord.getY() + " ;");
-			System.out.println("* " + (ctr + 1) + " BODY:  X = " + currBody.x + " ; Y = " + currBody.y + " ;");
+	//		System.out.println("* " + (ctr + 1) + " BODY:  X = " + currBody.x + " ; Y = " + currBody.y + " ;");
 			ctr++;
 		}
 	}

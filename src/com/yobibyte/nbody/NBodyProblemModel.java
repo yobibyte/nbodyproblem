@@ -21,10 +21,10 @@ public class NBodyProblemModel {
 		// player = new Player();
 		bg = new Background(0f, 0f);
 		bg1 = new Background(0, -400);
-//		Random rand = new Random();
+		Random rand = new Random();
 //		for (int i = 0; i < Constants.NUM_OF_BODIES; i++) {
-//			Body newBody = new Body(new Point2D.Double(rand.nextDouble() * 30, rand.nextDouble() * 30), new Point2D.Double(rand.nextDouble() / 20, rand.nextDouble() / 20));
-//			newBody.mass = rand.nextFloat() * 500;
+//			Body newBody = new Body(new Point2D.Double(rand.nextDouble() * 100, rand.nextDouble() * 100), new Point2D.Double(rand.nextDouble() / 10, rand.nextDouble() / 10));
+//			newBody.mass = rand.nextFloat() * 10000;
 //			bodies.add(newBody);
 //		}
 
@@ -36,6 +36,7 @@ public class NBodyProblemModel {
 		 moon.mass = 500d;
 		 bodies.add(earth);
 		 bodies.add(moon);
+
 		solver = new Solver(bodies);
 	}
 

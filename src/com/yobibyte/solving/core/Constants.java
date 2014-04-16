@@ -11,13 +11,13 @@ public class Constants {
 	//public static final double GRAVITY = 6.67545 / Math.pow(10, 11);
 	public static final double GRAVITY = 0.001;
 	public static final double MASS = 200;
-	public static final Double RUNGE_STEP = 2d;
+	public static final Double RUNGE_STEP = 0.1d;
 	public static Integer NUM_OF_BODIES = 2;
 	public static Integer NUM_OF_STEPS = 1000000;
 
 	// Rendering stuff
 	public static String TITLE = "Yobibyte n-problem implementation";
-	public static final int TILE_SIZE = 16;
+	public static final int TILE_SIZE = 32;
 	public static final int BG_SIZE = 64 * 64;
 	public static final Integer DISPLAY_WIDTH = 800;
 	public static final Integer DISPLAY_HEIGHT = 600;
