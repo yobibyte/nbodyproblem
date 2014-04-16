@@ -9,9 +9,9 @@ public class Constants {
 	public static final Point2D INITIAL_ACCELERATION = new Point2D.Double(0, 1);
 	public static final double V0 = 1f;
 	//public static final double GRAVITY = 6.67545 / Math.pow(10, 11);
-	public static final double GRAVITY = 0.001;
-	public static final double MASS = 200;
-	public static final Double RUNGE_STEP = 0.1d;
+	public static final double GRAVITY = 0.0001d;
+	public static final double MASS = 200d;
+	public static final Double RUNGE_STEP = 2d;
 	public static Integer NUM_OF_BODIES = 2;
 	public static Integer NUM_OF_STEPS = 1000000;
 

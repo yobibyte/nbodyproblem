@@ -9,12 +9,12 @@ public class RungeKuttaMethod implements DiffEquSolver {
 	public static final java.lang.Double STEP = Constants.RUNGE_STEP;
 
 	@Override
-	public void solve(Body body, List<Body> bodies) {
+	public void makeAStep(Body body, List<Body> bodies) {
+		
 		Point2D coords = body.coord;
 		Point2D velocity = body.velocity;
-
 		Point2D varToCalc = new Point2D.Double();
-		//
+		
 		Point2D k1v, k2v, k3v, k4v, k1p, k2p, k3p, k4p;
 		k1v = k2v = k3v = k4v = k1p = k2p = k3p = k4p = new Point2D.Double();
 
@@ -37,27 +37,27 @@ public class RungeKuttaMethod implements DiffEquSolver {
 		body.coord.setLocation(coords.getX() + (k1p.getX() + 2 * k2p.getX() + 2 * k3p.getX() + k4p.getX()) * STEP / 6, coords.getY() + (k1p.getY() + 2 * k2p.getY() + 2 * k3p.getY() + k4p.getY()) * STEP / 6);
 
 		// alxdon solver
-		// Iterator<Body> it = bodies.iterator();
-		//
-		// double fx = 0d;
-		// double fy = 0d;
-		//
-		// if (it.hasNext()) {
-		// Body currBody = it.next();
-		// if (currBody != body) {
-		// double deltaX = currBody.coord.getX() - coords.getX();
-		// double deltaY = currBody.coord.getY() - coords.getY();
-		// double deltaR = deltaX * deltaX + deltaY * deltaY;
-		// double f = Constants.GRAVITY * body.mass * currBody.mass / deltaR;
-		// deltaR = Math.sqrt(deltaR);
-		// fx += f * deltaX / deltaR;
-		// fy += f * deltaY / deltaR;
-		// }
-		// body.velocity.setLocation(velocity.getX() + STEP * fx / body.mass,
-		// velocity.getY() + STEP * fy / body.mass);
-		// body.coord.setLocation(coords.getX() + velocity.getX() * STEP,
-		// coords.getY() + velocity.getY() * STEP);
-		// }
+//		 Iterator<Body> it = bodies.iterator();
+//		
+//		 double fx = 0d;
+//		 double fy = 0d;
+//		
+//		 if (it.hasNext()) {
+//		 Body currBody = it.next();
+//		 if (currBody != body) {
+//		 double deltaX = currBody.coord.getX() - coords.getX();
+//		 double deltaY = currBody.coord.getY() - coords.getY();
+//		 double deltaR = deltaX * deltaX + deltaY * deltaY;
+//		 double f = Constants.GRAVITY * body.mass * currBody.mass / deltaR;
+//		 deltaR = Math.sqrt(deltaR);
+//		 fx += f * deltaX / deltaR;
+//		 fy += f * deltaY / deltaR;
+//		 }
+//		 body.velocity.setLocation(velocity.getX() + STEP * fx / body.mass,
+//		 velocity.getY() + STEP * fy / body.mass);
+//		 body.coord.setLocation(coords.getX() + velocity.getX() * STEP,
+//		 coords.getY() + velocity.getY() * STEP);
+//		 }
 
 	}
 
@@ -67,7 +67,7 @@ public class RungeKuttaMethod implements DiffEquSolver {
 		double ax = 0d;
 		double ay = 0d;
 
-		if (it.hasNext()) {
+		while (it.hasNext()) {
 			Body currBody = it.next();
 			if (currBody != body) {
 				double deltaX = currBody.coord.getX() - varToCalc.getX();

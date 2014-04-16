@@ -7,7 +7,7 @@ import com.yobibyte.rendering.engine.Window;
 import com.yobibyte.solving.core.Constants;
 
 public class Engine {
-	
+
 	public static NBodyProblemModel nBodyProblemModel;
 
 	public static void startRendering() {
@@ -21,24 +21,21 @@ public class Engine {
 		int stepCounter = 0;
 		while (!isCloseRequested()) {
 			Window.clear();
-			//nBodyProblemModel.input();
 			if (stepCounter < Constants.NUM_OF_STEPS) {
 				nBodyProblemModel.calculations(stepCounter);
 				stepCounter++;
 			}
 			nBodyProblemModel.render();
 			Window.update();
-			
-
 		}
 	}
 
 	private static void createWindow() {
 		Window.create(Constants.DISPLAY_WIDTH, Constants.DISPLAY_WIDTH);
 	}
-	
+
 	public static void createModel() {
-		 nBodyProblemModel = new NBodyProblemModel();
+		nBodyProblemModel = new NBodyProblemModel();
 	}
 
 	private static boolean isCloseRequested() {

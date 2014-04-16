@@ -26,7 +26,7 @@ public class Solver {
 		int ctr = 0;
 		while (it.hasNext()) {
 			Body currBody = it.next();
-			solver.solve(currBody, bodies);
+			solver.makeAStep(currBody, bodies);
 //			Point2D currCoord = currBody.coord;
 			//System.out.println("* " + (ctr + 1) + " BODY:  X = " + currCoord.getX() + " ; Y = " + currCoord.getY() + " ;");
 	//		System.out.println("* " + (ctr + 1) + " BODY:  X = " + currBody.x + " ; Y = " + currBody.y + " ;");

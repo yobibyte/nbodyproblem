@@ -220,17 +220,15 @@ public class Body {
 	public void setRenderCoords() {
 		x = (float) coord.getX() + OFFSET_X + 200;
 		y = (float) coord.getY() + OFFSET_Y + 200;
-	}
+	};
 
 	public Body(Point2D coords, Point2D vel) {
 		mass = Constants.MASS;
 		coord = coords;
 		velocity = vel;
-		//velocity = vel;
 		
 		setRenderCoords();
 		
-		// acceleration = initAcceleration;
 		// Runge-Kutta of a 4th order
 
 		try {

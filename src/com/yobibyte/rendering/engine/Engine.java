@@ -27,13 +27,6 @@ public class Engine {
 			}
 			nBodyProblemModel.render();
 			Window.update();
-
-			Thread b = new Thread();
-			try {
-				b.sleep(100);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
 		}
 	}
 
