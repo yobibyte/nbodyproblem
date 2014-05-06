@@ -225,8 +225,8 @@ public class Body {
 //	 };
 
 	public void setRenderCoords() {
-		x = (float) coord.getX() + OFFSET_X;
-		y = (float) coord.getY() + OFFSET_Y;
+		x = (float) coord.getX() + OFFSET_X + 200;
+		y = (float) coord.getY() + OFFSET_Y + 200;
 	};
 
 	public Body(Point2D coords, Point2D vel, double mass) {
